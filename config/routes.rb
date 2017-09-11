@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :articles
 
   get '/signup' => 'users#new', as: 'signup'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout' => 'sessions#destroy', as: 'logout'
 
   resources :users, except: [:new]
   # The priority is based upon order of creation: first created -> highest priority.
