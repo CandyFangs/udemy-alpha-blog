@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    debugger
     @article = Article.new(article_params)
     @article_params.user = current_user
     if @article.save
