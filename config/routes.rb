@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout' => 'sessions#destroy', as: 'logout'
 
+  resources :categories, except: [:destroy]
+
   resources :users, except: [:new]
+  
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
